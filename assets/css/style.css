@@ -189,11 +189,11 @@ table {
     border-radius: .3rem;
     padding: .1rem;
     display: block;
-    width: 100%;
-    margin: 0rem;
+    width: 95%;
+    margin: .2rem;
 }
 
-.button-biru a {
+.button a {
     text-decoration: none;
     color: #fff;
 }
@@ -206,6 +206,37 @@ table {
 .button-biru:hover {
     background-color: #0069d9;
 }
+
+.button-merah {
+    background-color: #ff0000;
+    border-color: #ff0000;
+}
+
+.button-merah:hover {
+    background-color: #d90000;
+}
+
+.button-kuning {
+    background-color: #f3c221;
+    border-color: #f1c123;
+}
+
+.button-kuning:hover {
+    background-color: #d9b800;
+}
+
+.pencarian a {
+    text-decoration: none;
+    color: black;
+}
+
+.pencarian {
+    float: right;
+    padding-right: 3rem;
+    margin-bottom: 2rem;
+}
+
+
 
 @media only screen and (min-device-width:360px) and (max-device-width:768px) {
     .table-responsif {
