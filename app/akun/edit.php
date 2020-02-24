@@ -7,7 +7,7 @@ $breadcumb ="Akun > Edit";
 $adminonly = 1;
 include('../../assets/templates/app/header.php');
 
-$ambil = $_REQUEST['username'];
+$ambil = $_GET['username'];
 $cek = mysqli_query($koneksi,"SELECT * FROM user WHERE username='$ambil'");
 $tampil = mysqli_fetch_array($cek)
 ?>

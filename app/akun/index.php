@@ -6,31 +6,24 @@ $judul = "List akun";
 $breadcumb ="List akun";
 $adminonly = 1;
 include('../../assets/templates/app/header.php');
-if(isset($_REQUEST['cari'])){
-    $cari = $_REQUEST['cari'];
+if(isset($_GET['cari'])){
+    $cari = $_GET['cari'];
     $queryakun = mysqli_query($koneksi,"SELECT * FROM user WHERE username LIKE '%$cari%' OR nama_user LIKE '%$cari%' OR kontak LIKE '%$cari%'");
     $no =1;
 }else{
-    $halaman = 1;
-    if(isset($_REQUEST['halaman'])){
-        $page = $_REQUEST['halaman'];
-    }else{
-        $page = 1;
-    }
-    if($page>1){
-        $mulai = $page * $halaman - $halaman;
-    }else{
-        $mulai = 0;
-    }
-    $result = mysqli_query($Koneksi,"SELECT * FROM user");
-    $total = mysqli_num_rows($result);
-    $pages = ceil($total/$halaman);   
+    $jumlahdatahalaman = 5;
+    $halamansekarang = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
+    $mulai = ($jumlahdatahalaman * $halamansekarang) - $jumlahdatahalaman;
     if($_SESSION['username']=="admin"){
-        $queryakun = mysqli_query($koneksi,"SELECT * FROM user LIMIT $mulai, $halaman");
+        $queryakun = mysqli_query($koneksi,"SELECT * FROM user LIMIT $mulai, $jumlahdatahalaman");
     }else{
         $queryakun = mysqli_query($koneksi,"SELECT * FROM user WHERE username != 'admin' AND id_level != '1' LIMIT $mulai, $halaman");
     }
     $no = $mulai+1;
+
+    $result = mysqli_query($koneksi,"SELECT * FROM user");
+    $total = mysqli_num_rows($result);
+    $jumlahhalaman = ceil($total/$jumlahdatahalaman);
 }   
 
 ?>
@@ -98,8 +91,41 @@ if(isset($_REQUEST['cari'])){
     </tbody>
 </table>
 
-<div class="halaman mx-auto">
-</div>
+<nav class="mt-2">
+    <ul class="halaman konten-tengah">
+
+        <?php if($halamansekarang >1): ?>
+        <li class="item-halaman"><a href="?halaman=<?= $halamansekarang-1;?>" class="link-halaman">Sebelumnya</a></li>
+        <?php else :?>
+        <li class="item-halaman disabled"><a href="?halaman=<?= $halamansekarang-1;?>"
+                class="link-halaman">Sebelumnya</a></li>
+        <?php endif; ?>
+
+        <?php for($i=1;$i<= ($jumlahhalaman);$i++): ?>
+        <?php if($i == $halamansekarang): ?>
+
+        <li class="item-halaman active"><a href="?halaman=<?= $i;?>" class="link-halaman"><?= $i;?></a></li>
+
+        <?php else : ?>
+
+        <li class="item-halaman"><a href="?halaman=<?= $i;?>" class="link-halaman"><?= $i;?></a></li>
+
+        <?php
+        endif;
+        ?>
+
+        <?php
+        endfor;
+        ?>
+
+        <?php if($halamansekarang < $jumlahhalaman): ?>
+        <li class="item-halaman"><a href="?halaman=<?= $halamansekarang+1;?>" class="link-halaman">Selanjutnya</a></li>
+        <?php else : ?>
+        <li class="item-halaman disabled"><a href="?halaman=<?= $halamansekarang+1;?>"
+                class="link-halaman">Selanjutnya</a></li>
+        <?php endif; ?>
+    </ul>
+</nav>
 
 <?php
 include('../../assets/templates/app/footer.php');

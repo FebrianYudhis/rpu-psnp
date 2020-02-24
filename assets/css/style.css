@@ -155,7 +155,6 @@ table {
     display: flex;
     list-style: none;
     border-radius: .25rem;
-    border: 1px solid black;
 }
 
 .link-halaman {
@@ -167,6 +166,9 @@ table {
     border: 1px solid #dee2e6;
 }
 
+.konten-tengah {
+    justify-content: center;
+}
 
 .link-halaman:hover {
     z-index: 2;
