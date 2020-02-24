@@ -1,0 +1,283 @@
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+    .header {
+        height: 15%;
+        background-color: rgb(121, 158, 228);
+        text-align: center;
+        padding-top: 1.5rem;
+    }
+
+    .sub-header {
+        height: 8%;
+        background-color: rgba(158, 185, 235, 0.808);
+    }
+
+    .sub-kiri {
+        float: left;
+        width: 70%;
+        padding: 1rem;
+        height: 100%;
+    }
+
+    .sub-kanan {
+        float: left;
+        width: 30%;
+        height: 100%;
+        border-bottom: 5px solid orange;
+    }
+
+
+    .navbar {
+        float: left;
+        height: 72%;
+        width: 15%;
+        background-color: rgb(177, 211, 115);
+    }
+
+    .konten {
+        float: left;
+        height: 72%;
+        width: 85%;
+        background-color: rgb(243, 235, 235);
+        overflow: auto;
+    }
+
+    .footer {
+        float: left;
+        width: 100%;
+        height: 5%;
+        background-color: rgb(50, 206, 57);
+        text-align: center;
+        padding-top: 0.5rem;
+    }
+
+    .avatar {
+        width: 2.8rem;
+        border-radius: 50%;
+    }
+
+
+    /* Profil */
+    .sub-kanan ul li {
+        float: left;
+        position: relative;
+        font-weight: bold;
+    }
+
+    .sub-kanan ul ul {
+        transition: all 0.5s;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 120%;
+        left: -0rem;
+    }
+
+    .sub-kanan ul li ul li {
+        clear: both;
+        border: 1px solid black;
+        width: 100%;
+        padding: 1rem;
+    }
+
+
+    .sub-kanan ul li ul {
+        background-color: rgba(158, 185, 235, 0.808);
+        width: 100%;
+        text-align: center;
+    }
+
+    .sub-kanan ul li:hover>ul {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .sub-kanan ul li:hover {
+        background-color: rgb(31, 192, 241);
+        color: white;
+    }
+
+    .sub-kanan .nama {
+        padding: 0.8rem;
+        min-width: 15rem;
+    }
+
+    .sub-kanan a {
+        text-decoration: none;
+        color: black;
+    }
+
+
+
+
+
+
+
+    /* Navbar */
+    .navbar ul,
+    .sub-kanan ul {
+        list-style: none;
+    }
+
+    .navbar ul li {
+        padding: 1rem;
+        position: relative;
+        width: 100%;
+        border-right: 5px solid orange;
+        border-bottom: 1px solid black;
+    }
+
+    .navbar ul li ul li {
+        border-right: none;
+        border: 1px solid black;
+    }
+
+    .navbar ul li ul {
+        background-color: rgb(177, 211, 115);
+        width: 10rem;
+        border-top: 1px solid black;
+    }
+
+    .navbar ul ul {
+        transition: all 0.5s;
+        opacity: 0;
+        position: absolute;
+        visibility: hidden;
+        left: 13rem;
+        top: -50%;
+    }
+
+
+    .navbar ul li:hover>ul {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar ul li:hover {
+        background-color: rgb(18, 77, 16);
+    }
+
+
+    .navbar ul li:hover>a {
+        color: white;
+    }
+
+    .navbar ul li a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* ------------------------------
+            Mode Handphone
+------------------------------ */
+
+    @media only screen and (min-device-width:360px) and (max-device-width:768px) {
+
+        body,
+        html {
+            width: 100%;
+            max-height: 100%;
+        }
+
+        .header {
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        .sub-header {
+            width: 100%;
+        }
+
+        .navbar {
+            width: 100%;
+            border-top: 1px solid black;
+            max-height: 1rem;
+        }
+
+        .konten {
+            width: 100%;
+        }
+
+        .sub-kanan {
+            width: 40%;
+            border: none;
+            border-left: 1px solid orange;
+        }
+
+        .sub-kiri {
+            font-size: 10px;
+            width: 60%;
+            padding-left: 0rem;
+        }
+
+        .sub-kanan .avatar {
+            display: none;
+        }
+
+        .sub-kanan .nama {
+            font-size: 10px;
+            width: 100%;
+        }
+
+        .sub-kanan ul li ul li {
+            float: left;
+            padding: 0.3rem;
+        }
+
+        .sub-kanan ul li ul {
+            background-color: rgba(158, 185, 235, 0.808);
+            width: 40%;
+            text-align: center;
+        }
+
+        .sub-kanan ul ul {
+            top: -10%;
+            left: -40%;
+        }
+
+
+        .navbar ul li {
+            font-size: 6px;
+            padding: 0px;
+            float: left;
+            width: 12%;
+            height: 1rem;
+            border: none;
+            border-bottom: 1px solid orange;
+            padding-top: .2rem;
+        }
+
+        .navbar ul {
+            width: 100%;
+            text-align: center;
+            margin-left: 2%;
+        }
+
+        .navbar ul li ul li {
+            clear: both;
+            width: 100%;
+            border-right: none;
+            border: 1px solid black;
+        }
+
+        .navbar ul li ul {
+            width: 100%;
+            border: none;
+        }
+
+        .navbar ul ul {
+            left: -0rem;
+            top: 100%;
+        }
+
+    }
