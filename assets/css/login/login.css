@@ -1,0 +1,68 @@
+.kotak {
+    margin: 2rem auto;
+    background-color: rgb(139, 218, 139);
+    width: 30%;
+    display: grid;
+    grid-template-rows: 2fr 10fr 1fr;
+    border-radius: 3rem;
+}
+
+body {
+    overflow: hidden;
+    background: rgb(235, 49, 49);
+    background: linear-gradient(90deg, rgba(241, 99, 99, 0.956) 0%, rgba(75, 226, 67, 0.958) 47%, rgb(73, 158, 231) 88%);
+}
+
+.kepala {
+    align-self: center;
+    justify-self: center;
+}
+
+p {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.isi {
+    padding-left: 3rem;
+}
+
+input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    width: 70%;
+    height: 2rem;
+    border-radius: 7px;
+}
+
+button {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 85%;
+    height: 3rem;
+    border-radius: 2rem;
+}
+
+
+.kaki {
+    align-self: center;
+    justify-self: center;
+}
+
+@media only screen and (min-device-width:360px) and (max-device-width:768px) {
+    .kotak {
+        width: 80%;
+        margin: 3rem auto;
+        grid-template-rows: 2fr 5fr 1fr;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    h1 {
+        text-align: center;
+    }
+}
