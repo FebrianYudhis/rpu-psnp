@@ -11,7 +11,7 @@ if($_SESSION['role']!='1'){
     $a = $_REQUEST['username'];
     $query = mysqli_query($koneksi,"UPDATE user set status='Aktif' WHERE username='$a'");
     if($query){
-        echo "<script>alert('Berhasil diaktivasi !!!');window.location='../../../app/index.php'</script>";
+        echo "<script>alert('Berhasil diaktivasi !!!');window.location='{$base_url}app/index.php'</script>";
     }
 }
 

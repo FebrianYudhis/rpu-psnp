@@ -111,18 +111,24 @@ table {
 }
 
 .form-isi {
-    margin-bottom: 1rem;
-    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
 }
 
 .form-input {
+    line-height: 1rem;
     display: block;
     width: 90%;
     padding: .375rem .75rem;
-    font-size: .8rem;
+    font-size: 1rem;
     color: #495057;
     border: 1px solid #ced4da;
     border-radius: .25rem;
+}
+
+.form-submit {
+    width: 100%;
+    height: 2rem;
 }
 
 .kotak {
@@ -148,7 +154,8 @@ table {
 .halaman {
     display: flex;
     list-style: none;
-    border-radius: .25rem
+    border-radius: .25rem;
+    border: 1px solid black;
 }
 
 .link-halaman {
@@ -157,14 +164,14 @@ table {
     padding: .5rem .75rem;
     color: #007bff;
     background-color: #fff;
-    border: 1px solid #dee2e6
+    border: 1px solid #dee2e6;
 }
 
 
 .link-halaman:hover {
     z-index: 2;
     background-color: #e9ecef;
-    border-color: #dee2e6
+    border-color: #dee2e6;
 }
 
 .halaman a {
@@ -232,10 +239,14 @@ table {
 
 .pencarian {
     float: right;
-    padding-right: 3rem;
+    display: block;
     margin-bottom: 2rem;
+    padding-right: 4rem;
 }
 
+.clear {
+    clear: both;
+}
 
 
 @media only screen and (min-device-width:360px) and (max-device-width:768px) {

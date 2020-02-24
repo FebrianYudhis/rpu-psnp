@@ -8,10 +8,10 @@ if(!isset($_SESSION['username']) AND !isset($_SESSION['id']) AND !isset($_SESSIO
 if($_SESSION['role']!='1'){
     echo "<script>alert('Akses ditolak !!!');window.location='{$base_url}app/index.php'</script>";
 }else{
-    $a = $_REQUEST['username'];
-    $query = mysqli_query($koneksi,"DELETE from user WHERE username='$a'");
+    $a = $_POST['nama'];
+    $query = mysqli_query($koneksi,"INSERT INTO jenis VALUES(NULL,'$a')");
     if($query){
-        echo "<script>alert('Berhasil dihapus !!!');window.location='{$base_url}app/index.php'</script>";
+        echo "<script>alert('Berhasil ditambah !!!');window.location='{$base_url}app/index.php'</script>";
     }
 }
 

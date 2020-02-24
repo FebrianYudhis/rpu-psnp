@@ -10,6 +10,7 @@ if(isset($adminonly)){
     }
 }
 
+
 if(isset($operatorakses)){
     if($_SESSION['role'] == '3'){
         echo "<script>alert('Akses ditolak !!!');window.location='{$base_url}app/index.php'</script>";

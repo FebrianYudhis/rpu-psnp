@@ -6,25 +6,48 @@ $judul = "List akun";
 $breadcumb ="List akun";
 $adminonly = 1;
 include('../../assets/templates/app/header.php');
-if($_SESSION['username']=="admin"){
-    $queryakun = mysqli_query($koneksi,"SELECT * FROM user");
+if(isset($_REQUEST['cari'])){
+    $cari = $_REQUEST['cari'];
+    $queryakun = mysqli_query($koneksi,"SELECT * FROM user WHERE username LIKE '%$cari%' OR nama_user LIKE '%$cari%' OR kontak LIKE '%$cari%'");
+    $no =1;
 }else{
-    $queryakun = mysqli_query($koneksi,"SELECT * FROM user WHERE username != 'admin' AND id_level != '1'");
-}
+    $halaman = 1;
+    if(isset($_REQUEST['halaman'])){
+        $page = $_REQUEST['halaman'];
+    }else{
+        $page = 1;
+    }
+    if($page>1){
+        $mulai = $page * $halaman - $halaman;
+    }else{
+        $mulai = 0;
+    }
+    $result = mysqli_query($Koneksi,"SELECT * FROM user");
+    $total = mysqli_num_rows($result);
+    $pages = ceil($total/$halaman);   
+    if($_SESSION['username']=="admin"){
+        $queryakun = mysqli_query($koneksi,"SELECT * FROM user LIMIT $mulai, $halaman");
+    }else{
+        $queryakun = mysqli_query($koneksi,"SELECT * FROM user WHERE username != 'admin' AND id_level != '1' LIMIT $mulai, $halaman");
+    }
+    $no = $mulai+1;
+}   
 
 ?>
 
-<h2 class="center mt-1 mb-4">List akun</h2>
+<h2 class="center mt-1 mb-1">List akun</h2>
 
 <div class="pencarian">
     <table>
         <tr>
-            <td><input type="text" name="cari" placeholder="Masukkan kata kunci"></td>
-            <td><button><a href="">Cari</a></button></td>
+            <form action="" method="GET">
+                <td><input type="text" name="cari" placeholder="Masukkan kata kunci"></td>
+                <td><button><a href="">Cari</a></button></td>
+            </form>
         </tr>
     </table>
 </div>
-
+<div class="clear"></div>
 <table class="table table-berborder table-garis mx-auto center table-hover table-responsif" style="width: 80%;">
     <thead class="kepala-dark">
         <tr>
@@ -39,7 +62,6 @@ if($_SESSION['username']=="admin"){
     </thead>
     <tbody>
         <?php
-            $no = 1;
             while($tampilakun = mysqli_fetch_array($queryakun)):
         ?>
         <tr>
@@ -75,6 +97,10 @@ if($_SESSION['username']=="admin"){
         ?>
     </tbody>
 </table>
+
+<div class="halaman mx-auto">
+</div>
+
 <?php
 include('../../assets/templates/app/footer.php');
 ?>
