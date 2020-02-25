@@ -72,7 +72,7 @@ $tampil = mysqli_fetch_array($cek)
                     ?>
                 </select>
             </div>
-            <input type="submit" value="Tambah" class="form-submit mx-auto">
+            <input type="submit" value="Ubah" class="form-submit mx-auto">
         </form>
     </div>
 </div>
