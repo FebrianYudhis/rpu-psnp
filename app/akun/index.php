@@ -15,13 +15,15 @@ if(isset($_GET['cari'])){
     $halamansekarang = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
     $mulai = ($jumlahdatahalaman * $halamansekarang) - $jumlahdatahalaman;
     if($_SESSION['username']=="admin"){
-        $queryakun = mysqli_query($koneksi,"SELECT * FROM user LIMIT $mulai, $jumlahdatahalaman");
+        $queryakun = mysqli_query($koneksi,"SELECT * FROM user ORDER BY status desc LIMIT $mulai, $jumlahdatahalaman");
+        $result = mysqli_query($koneksi,"SELECT * FROM user");
     }else{
-        $queryakun = mysqli_query($koneksi,"SELECT * FROM user WHERE username != 'admin' AND id_level != '1' LIMIT $mulai, $halaman");
+        $queryakun = mysqli_query($koneksi,"SELECT * FROM user WHERE username != 'admin' AND id_level != '1' ORDER BY status desc LIMIT $mulai, $jumlahdatahalaman");
+        $result = mysqli_query($koneksi,"SELECT * FROM user WHERE username != 'admin' AND id_level != '1'");
     }
     $no = $mulai+1;
 
-    $result = mysqli_query($koneksi,"SELECT * FROM user");
+    
     $total = mysqli_num_rows($result);
     $jumlahhalaman = ceil($total/$jumlahdatahalaman);
 }   
@@ -79,8 +81,13 @@ if(isset($_GET['cari'])){
 
                 <button class='button button-kuning'><a
                         href='<?= $base_url;?>app/akun/edit.php?username=<?= $tampilakun['username'];?>'>Edit</a></button>
-                <button class='button button-merah'><a
-                        href='<?= $base_url;?>assets/sql/akun/hapus.php?username=<?= $tampilakun['username'];?>'>Hapus</a></button>
+                <?php
+                    if($tampilakun['username'] != $_SESSION['username']){
+                        echo "<button class='button button-merah'><a
+                        href='{$base_url}assets/sql/akun/hapus.php?username={$tampilakun['username']}'>Hapus</a></button>";
+                }
+                ?>
+
             </td>
         </tr>
 

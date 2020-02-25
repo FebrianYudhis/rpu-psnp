@@ -9,8 +9,8 @@
 
 body {
     overflow: hidden;
-    background: rgb(235, 49, 49);
-    background: linear-gradient(90deg, rgba(241, 99, 99, 0.956) 0%, rgba(75, 226, 67, 0.958) 47%, rgb(73, 158, 231) 88%);
+    background-color: rgb(109, 245, 166);
+    /* background: linear-gradient(90deg, rgba(241, 99, 99, 0.956) 0%, rgba(75, 226, 67, 0.958) 47%, rgb(73, 158, 231) 88%); */
 }
 
 .kepala {
