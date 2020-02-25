@@ -155,6 +155,7 @@ table {
     display: flex;
     list-style: none;
     border-radius: .25rem;
+    overflow-y: auto;
 }
 
 .link-halaman {

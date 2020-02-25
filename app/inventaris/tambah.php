@@ -11,7 +11,7 @@ $jenis=mysqli_query($koneksi,"SELECT * FROM jenis");
 $ruang=mysqli_query($koneksi,"SELECT * FROM ruang");
 ?>
 
-<div class="kotak mt-3 mx-auto" style="width:70%;">
+<div class="kotak mt-3 mx-auto mb-4" style="width:70%;">
     <div class="kotak-kepala center">
         <h2>Tambah data inventaris</h2>
     </div>
