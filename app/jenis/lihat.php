@@ -2,35 +2,29 @@
 session_start();
 include('../../assets/sql/koneksi.php');
 $base_url= "../../";
-$judul = "List akun";
-$breadcumb ="List akun";
+$judul = "Lihat jenis";
+$breadcumb ="Jenis > Lihat";
 $adminonly = 1;
 include('../../assets/templates/app/header.php');
 if(isset($_GET['cari'])){
     $cari = $_GET['cari'];
-    $queryakun = mysqli_query($koneksi,"SELECT * FROM user WHERE username LIKE '%$cari%' OR nama_user LIKE '%$cari%' OR kontak LIKE '%$cari%'");
+    $queryjenis = mysqli_query($koneksi,"SELECT * FROM jenis WHERE nama_jenis LIKE '%$cari%'");
     $no =1;
 }else{
     $jumlahdatahalaman = 5;
     $halamansekarang = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
     $mulai = ($jumlahdatahalaman * $halamansekarang) - $jumlahdatahalaman;
-    if($_SESSION['username']=="admin"){
-        $queryakun = mysqli_query($koneksi,"SELECT * FROM user ORDER BY status desc LIMIT $mulai, $jumlahdatahalaman");
-        $result = mysqli_query($koneksi,"SELECT * FROM user");
-    }else{
-        $queryakun = mysqli_query($koneksi,"SELECT * FROM user WHERE username != 'admin' AND id_level != '1' ORDER BY status desc LIMIT $mulai, $jumlahdatahalaman");
-        $result = mysqli_query($koneksi,"SELECT * FROM user WHERE username != 'admin' AND id_level != '1'");
-    }
+    $queryjenis = mysqli_query($koneksi,"SELECT * FROM jenis ORDER BY nama_jenis LIMIT $mulai, $jumlahdatahalaman");
     $no = $mulai+1;
-
     
+    
+    $result = mysqli_query($koneksi,"SELECT * FROM jenis");
     $total = mysqli_num_rows($result);
     $jumlahhalaman = ceil($total/$jumlahdatahalaman);
-}   
-
+}     
 ?>
 
-<h2 class="center mt-1 mb-1">List akun</h2>
+<h2 class="center mt-1 mb-1">List Jenis</h2>
 
 <div class="pencarian">
     <table>
@@ -43,51 +37,26 @@ if(isset($_GET['cari'])){
     </table>
 </div>
 <div class="clear"></div>
-<table class="table table-berborder table-garis mx-auto center table-hover table-responsif" style="width: 80%;">
+<table class="table table-berborder table-garis mx-auto center table-hover table-responsif" style="width: 60%;">
     <thead class="kepala-dark">
         <tr>
             <th>#</th>
-            <th>Level</th>
-            <th>Nama</th>
-            <th>kontak</th>
-            <th>Username</th>
-            <th>Status</th>
+            <th>Nama jenis</th>
             <th>Aksi</th>
         </tr>
     </thead>
     <tbody>
         <?php
-            while($tampilakun = mysqli_fetch_array($queryakun)):
+            while($tampiljenis = mysqli_fetch_array($queryjenis)):
         ?>
         <tr>
             <td><?= $no;?></td>
-            <?php
-                $idlevel = $tampilakun['id_level'];
-                $querylevel =mysqli_query($koneksi,"SELECT * FROM level WHERE id_level= '$idlevel'");
-                $tampillevel = mysqli_fetch_array($querylevel);
-            ?>
-            <td><?= $tampillevel['nama_level'];?></td>
-            <td><?= $tampilakun['nama_user'];?></td>
-            <td><?= $tampilakun['kontak'];?></td>
-            <td><?= $tampilakun['username'];?></td>
-            <td><?= $tampilakun['status'];?></td>
+            <td><?= $tampiljenis['nama_jenis'];?></td>
             <td>
-                <?php
-                    if($tampilakun['status']=="Belum aktif"){
-                        echo "<button class='button button-biru'><a
-                        href='{$base_url}assets/sql/akun/aktivasi.php?username={$tampilakun['username']}'>Aktivasi</a></button>";
-                    }
-                ?>
-
-                <button class='button button-kuning'><a
-                        href='<?= $base_url;?>app/akun/edit.php?username=<?= $tampilakun['username'];?>'>Edit</a></button>
-                <?php
-                    if($tampilakun['username'] != $_SESSION['username']){
-                        echo "<button class='button button-merah'><a
-                        href='{$base_url}assets/sql/akun/hapus.php?username={$tampilakun['username']}'>Hapus</a></button>";
-                }
-                ?>
-
+                <button class="button button-kuning"><a
+                        href="<?= $base_url;?>app/jenis/edit.php?id_jenis=<?= $tampiljenis['id_jenis'];?>">Edit</a></button>
+                <button class="button button-merah"><a
+                        href="<?= $base_url;?>assets/sql/jenis/hapus.php?id_jenis=<?= $tampiljenis['id_jenis'];?>">Hapus</a></button>
             </td>
         </tr>
 
@@ -133,6 +102,7 @@ if(isset($_GET['cari'])){
         <?php endif; ?>
     </ul>
 </nav>
+
 
 <?php
 include('../../assets/templates/app/footer.php');

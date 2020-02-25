@@ -12,7 +12,7 @@ $cek = mysqli_query($koneksi,"SELECT * FROM user WHERE username='$ambil'");
 $tampil = mysqli_fetch_array($cek)
 ?>
 
-<div class="kotak mt-3 mx-auto" style="width:70%;">
+<div class="kotak mt-3 mb-4 mx-auto" style="width:70%;">
     <div class="kotak-kepala center">
         <h2>Edit akun</h2>
     </div>

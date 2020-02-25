@@ -2,7 +2,7 @@
 session_start();
 include('../koneksi.php');
 $base_url = "../../../";
-if(!isset($_SESSION['username']) AND !isset($_SESSION['id']) AND !isset($_SESSION['status']) AND !isset($_SESSION['role'])){
+if(!isset($_SESSION['username']) AND !isset($_SESSION['status']) AND !isset($_SESSION['role'])){
     echo "<script>alert('Login dahulu !!!');window.location='{$base_url}index.php'</script>";
 }
 $a = $_POST['inventaris'];
