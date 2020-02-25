@@ -70,6 +70,10 @@
         font-weight: bold;
     }
 
+    .sub-kanan ul {
+        position: relative;
+    }
+
     .sub-kanan ul ul {
         transition: all 0.2s;
         opacity: 0;

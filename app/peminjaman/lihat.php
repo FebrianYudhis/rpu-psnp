@@ -62,9 +62,9 @@ if($_SESSION['role']==3){
         <tr>
             <th>#</th>
             <th>Nama barang</th>
-            <th>Tanggal kembali</th>
+            <th>Tanggal pinjam</th>
             <th>Jumlah</th>
-            <th>Dikelola oleh</th>
+            <th>Dipinjam oleh</th>
             <th>Aksi</th>
         </tr>
     </thead>

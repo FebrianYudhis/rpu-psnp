@@ -37,7 +37,7 @@ if(isset($operatorakses)){
             <ul>
                 <li><img src="<?= $base_url;?>assets/img/img.jpg" alt="avatar" class="avatar"></li>
                 <li class="nama"><b><a href="#"><?= $_SESSION['nama'];?> </a></b>
-                    <ul>
+                    <ul style="z-index:99;">
                         <li><a href="<?= $base_url;?>app/gantipassword.php">Ganti password</a></li>
                         <li><a href="<?= $base_url;?>assets/sql/keluar.php">Keluar</a></li>
                     </ul>
