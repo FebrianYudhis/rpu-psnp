@@ -9,7 +9,7 @@ $a = $_POST['inventaris'];
 $b = $_POST['tanggal_pinjam'];
 $c = $_POST['jumlah'];
 $d = $_SESSION['username'];
-$query = mysqli_query($koneksi,"INSERT INTO peminjaman VALUES(NULL,'$b',NULL,'$c','$a','$d')");
+$query = mysqli_query($koneksi,"INSERT INTO peminjaman VALUES(NULL,'$b','0000-00-00','$c','$a','$d')");
 if($query){
     echo "<script>alert('Berhasil ditambah !!!');window.location='{$base_url}app/index.php'</script>";
 }
