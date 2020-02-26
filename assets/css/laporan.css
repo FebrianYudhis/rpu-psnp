@@ -1,0 +1,85 @@
+.laporan {
+    width: 100%;
+}
+
+.laporan .table {
+    width: 80%;
+}
+
+.laporan .kotak {
+    width: 20%;
+    border: 1px solid;
+    display: inline;
+    float: left;
+}
+
+.laporan .kotak-badan {
+    height: 3rem;
+}
+
+.laporan .kotakan {
+    width: 80%;
+}
+
+.laporan .kotak-kepala {
+    background-color: rgb(42, 42, 243);
+    height: 5rem;
+}
+
+@media only print {
+    .navbar {
+        display: none;
+    }
+
+    .sub-header {
+        display: none;
+    }
+
+    .konten {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 100%;
+    }
+
+    .halaman {
+        display: none;
+    }
+
+    .aksi {
+        display: none;
+    }
+
+    .pencarian {
+        display: none;
+    }
+
+    .table {
+        width: 100%;
+    }
+
+    .table .kepala-dark th {
+        color: black;
+    }
+
+    .laporan .kotak {
+        width: 35%;
+        border: 1px solid;
+        display: inline;
+        float: left;
+    }
+
+    .laporan .kotakan {
+        margin-top: -3rem;
+    }
+
+}
+
+@media only screen and (min-device-width:360px) and (max-device-width:768px) {
+    .laporan .kotak {
+        width: 40%;
+    }
+
+    .laporan .kotak-kepala {
+        height: 6rem;
+    }
+}

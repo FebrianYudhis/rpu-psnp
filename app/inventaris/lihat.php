@@ -8,7 +8,7 @@ $adminonly = 1;
 include('../../assets/templates/app/header.php');
 if(isset($_GET['cari'])){
     $cari = $_GET['cari'];
-    $queryinventaris = mysqli_query($koneksi,"SELECT * FROM inventaris WHERE nama_barang LIKE '%$cari%' OR id_jenis LIKE '%$cari%' OR id_ruang LIKE '%$cari%'");
+    $queryinventaris = mysqli_query($koneksi,"SELECT * FROM inventaris WHERE nama_barang LIKE '%$cari%'");
     $no =1;
 }else{
     $jumlahdatahalaman = 5;

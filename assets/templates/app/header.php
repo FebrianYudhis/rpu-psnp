@@ -23,6 +23,7 @@ if(isset($operatorakses)){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= $base_url;?>assets/css/style.css">
+    <link rel="stylesheet" href="<?= $base_url;?>assets/css/laporan.css">
     <link rel="stylesheet" href="<?= $base_url;?>assets/css/app/layout.css">
     <title><?= $judul;?></title>
 </head>
