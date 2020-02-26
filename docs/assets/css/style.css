@@ -1,0 +1,88 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: rgb(114, 114, 248);
+    text-align: center;
+    padding-top: 1.5rem;
+    height: 5rem;
+
+}
+
+body {
+    min-height: 100%;
+    background-color: rgb(130, 236, 148);
+}
+
+.konten {
+    background-color: rgb(130, 236, 148);
+    position: relative;
+}
+
+.navigasi {
+    padding-bottom: 3rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-content: space-around;
+}
+
+.navigasi .kiri {
+    text-align: center;
+}
+
+.navigasi .kanan {
+    text-align: center;
+}
+
+.clear {
+    clear: both;
+}
+
+.center {
+    text-align: center;
+}
+
+.mt-4 {
+    margin-top: 4rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 4rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.konten .biasa {
+    padding-left: 3rem;
+}
+
+.header a {
+    text-decoration: none;
+    color: rgb(110, 97, 97);
+}

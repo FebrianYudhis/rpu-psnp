@@ -41,7 +41,7 @@ $tampilinventaris=mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM invent
                 <p>Jumlah</p>
                 <small class="form-input"><?= $tampil['jumlah'];?></small>
             </div>
-            <input type="submit" value="Ubah" class="form-submit mx-auto">
+            <input type="submit" value="Kirim" class="form-submit mx-auto">
         </form>
     </div>
 </div>

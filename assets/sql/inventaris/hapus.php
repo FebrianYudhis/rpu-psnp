@@ -14,6 +14,8 @@ if($_SESSION['role']!='1'){
     $query = mysqli_query($koneksi,"DELETE from inventaris WHERE id_inventaris='$a'");
     if($query){
         echo "<script>alert('Berhasil dihapus !!!');window.location='{$base_url}app/index.php'</script>";
+    }else{
+        echo "<script>alert('Gagal dihapus !!!');window.location='{$base_url}app/index.php'</script>";
     }
 }
 

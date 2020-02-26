@@ -165,6 +165,9 @@ $datapinjam = mysqli_num_rows(mysqli_query($koneksi,"SELECT * FROM peminjaman WH
             <?php endif; ?>
         </ul>
     </nav>
+    <div class="mx-auto center mb-3 mt-3 print"><button style="width: 40%; height:3rem;"
+            onClick="window.print()">Print</button>
+    </div>
 
 </nav>
 <?php

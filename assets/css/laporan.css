@@ -63,15 +63,19 @@
 
     .laporan .kotak {
         width: 35%;
-        border: 1px solid;
+        border: 1px solid black;
         display: inline;
         float: left;
+        margin-top: 1rem;
     }
 
     .laporan .kotakan {
-        margin-top: -3rem;
+        margin-top: 1rem;
     }
 
+    .print {
+        display: none;
+    }
 }
 
 @media only screen and (min-device-width:360px) and (max-device-width:768px) {
