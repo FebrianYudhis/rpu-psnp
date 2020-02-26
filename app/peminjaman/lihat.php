@@ -15,7 +15,7 @@ if($_SESSION['role']==3){
         $querypeminjaman = mysqli_query($koneksi,"SELECT * FROM peminjaman WHERE id_inventaris='$ambilid' AND tanggal_kembali='0000-00-00' AND username='$ambilnama'");
         $no =1;
     }else{
-        $jumlahdatahalaman = 1;
+        $jumlahdatahalaman = 5;
         $halamansekarang = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
         $mulai = ($jumlahdatahalaman * $halamansekarang) - $jumlahdatahalaman;
         $querypeminjaman = mysqli_query($koneksi,"SELECT * FROM peminjaman WHERE tanggal_kembali='0000-00-00' AND username='$ambilnama' ORDER BY tanggal_pinjam desc LIMIT $mulai, $jumlahdatahalaman");
@@ -63,6 +63,7 @@ if($_SESSION['role']==3){
             <th>Tanggal pinjam</th>
             <th>Jumlah</th>
             <th>Dipinjam oleh</th>
+            <th>Dikelola oleh</th>
             <th>Aksi</th>
         </tr>
     </thead>
@@ -78,6 +79,8 @@ if($_SESSION['role']==3){
             <td><?= $tampilpeminjaman['tanggal_pinjam'];?></td>
             <td><?= $tampilpeminjaman['jumlah'];?></td>
             <td><?= $tampilpeminjaman['username'];?></td>
+            <td><?php if($tampilpeminjaman['pengelola']==NULL){echo '-';}else{echo $tampilpeminjaman['pengelola'];}?>
+            </td>
             <td>
                 <?php
                     if($ambilrole==3){

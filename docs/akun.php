@@ -7,7 +7,9 @@ include('assets/template/header.php');
 <div class="konten">
     <div class="tulisan mt-2">
         <h2 class="center mb-2">Akun</h2>
-        <p class="biasa">- Pada level admin,semua admin dapat mengedit data,melihat,menghapus data akun pada level
+        <p class="biasa"># Setiap akun dapat mengganti passwordnya,apabila kelupaan password sebelumnya,hubungi admin
+            untuk dilakukan reset password</p>
+        <p class="biasa mt-1">- Pada level admin,semua admin dapat mengedit data,melihat,menghapus data akun pada level
             dibawahnya (admin tidak dapat mengedit, melihat dan menghapus data admin lainnya,kecuali superadmin)
             <i>*superadmin
                 diaplikasi ini adalah admin yang memiliki username 'admin'</i></p>
