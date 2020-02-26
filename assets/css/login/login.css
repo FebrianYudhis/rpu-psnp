@@ -9,7 +9,7 @@
 
 body {
     overflow: hidden;
-    background-color: rgb(109, 245, 166);
+    background-color: rgb(109, 241, 245);
     /* background: linear-gradient(90deg, rgba(241, 99, 99, 0.956) 0%, rgba(75, 226, 67, 0.958) 47%, rgb(73, 158, 231) 88%); */
 }
 
@@ -45,6 +45,13 @@ button {
     border-radius: 2rem;
 }
 
+.kotak {
+    width: 25%;
+}
+
+.kotak h1 {
+    font-size: 25px;
+}
 
 .kaki {
     align-self: center;

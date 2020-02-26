@@ -75,7 +75,7 @@ if(isset($operatorakses)){
                     <li><a href="'.$base_url.'app/peminjaman/lihat.php">Lihat data</a></li>
                 </ul>
             </li>
-            <li><a href="'.$base_url.'app/pengembalian.php">Pengembalian</a></li>
+            <li><a href="'.$base_url.'app/pengembalian">Pengembalian</a></li>
             <li><a href="'.$base_url.'app/laporan.php">Laporan</a></li>';
             }else if($_SESSION['role']==2){
             echo '<li><a href="#">Peminjaman</a>
@@ -84,7 +84,7 @@ if(isset($operatorakses)){
                     <li><a href="'.$base_url.'app/peminjaman/lihat.php">Lihat data</a></li>
                 </ul>
             </li>
-            <li><a href="'.$base_url.'app/pengembalian.php">Pengembalian</a></li>';
+            <li><a href="'.$base_url.'app/pengembalian">Pengembalian</a></li>';
             }else{
             echo '<li><a href="#">Peminjaman</a>
                 <ul>

@@ -12,7 +12,7 @@ if($_SESSION['role']==3){
         $cari = $_GET['cari'];
         $ceknama = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM inventaris WHERE nama_barang LIKE '%$cari%'"));
         $ambilid = $ceknama['id_inventaris'];
-        $querypeminjaman = mysqli_query($koneksi,"SELECT * FROM peminjaman WHERE (id_peminjaman LIKE '%$cari%' OR id_inventaris LIKE '%$ambilid%') AND tanggal_kembali= '0000-00-00' AND username='$ambilnama'");
+        $querypeminjaman = mysqli_query($koneksi,"SELECT * FROM peminjaman WHERE id_inventaris='$ambilid' AND tanggal_kembali='0000-00-00' AND username='$ambilnama'");
         $no =1;
     }else{
         $jumlahdatahalaman = 1;
@@ -27,9 +27,7 @@ if($_SESSION['role']==3){
 }else{
     if(isset($_GET['cari'])){
         $cari = $_GET['cari'];
-        $ceknama = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM inventaris WHERE nama_barang LIKE '%$cari%'"));
-        $ambilid = $ceknama['id_inventaris'];
-        $querypeminjaman = mysqli_query($koneksi,"SELECT * FROM peminjaman WHERE (id_peminjaman LIKE '%$cari%' OR username LIKE '%$cari%' OR id_inventaris LIKE '%$ambilid%') AND tanggal_kembali= '0000-00-00'");
+        $querypeminjaman = mysqli_query($koneksi,"SELECT * FROM peminjaman WHERE username LIKE '%$cari%'  AND tanggal_kembali='0000-00-00'");
         $no =1;
     }else{
         $jumlahdatahalaman = 5;
