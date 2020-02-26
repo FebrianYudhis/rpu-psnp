@@ -76,7 +76,7 @@ if(isset($operatorakses)){
                 </ul>
             </li>
             <li><a href="'.$base_url.'app/pengembalian">Pengembalian</a></li>
-            <li><a href="'.$base_url.'app/laporan.php">Laporan</a></li>';
+            <li><a href="'.$base_url.'app/laporan/">Laporan</a></li>';
             }else if($_SESSION['role']==2){
             echo '<li><a href="#">Peminjaman</a>
                 <ul>

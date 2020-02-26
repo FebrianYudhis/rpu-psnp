@@ -17,7 +17,7 @@ if($_SESSION['role']=='3'){
     if($c<0){
         echo "<script>alert('Angka tidak boleh kurang dari 0 !!!');window.location='{$base_url}app/peminjaman/edit.php?id_peminjaman={$aa}'</script>";
     }else{
-        $query = mysqli_query($koneksi,"UPDATE peminjaman SET id_inventaris='$a',tanggal_pinjam='$b',jumlah='$c' WHERE id_peminjaman='$aa'");
+        $query = mysqli_query($koneksi,"UPDATE peminjaman SET id_inventaris='$a',tanggal_pinjam='$b',jumlah='$c',pengelola='$d' WHERE id_peminjaman='$aa'");
         if($query){
             echo "<script>alert('Berhasil diubah !!!');window.location='{$base_url}app/index.php'</script>";
         }

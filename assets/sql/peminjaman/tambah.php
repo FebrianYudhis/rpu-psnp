@@ -16,7 +16,7 @@ $cekstok = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM inventaris WH
 if($c > $cekstok['jumlah'] OR $c < 0 ){
     echo "<script>alert('Jumlah barang hanya ada {$cekstok['jumlah']},gagal meminjam !!!');window.location='{$base_url}app/peminjaman/tambah.php'</script>";
 }else{
-    $query = mysqli_query($koneksi,"INSERT INTO peminjaman VALUES(NULL,'$b','0000-00-00','$c','$a','$d')");
+    $query = mysqli_query($koneksi,"INSERT INTO peminjaman VALUES(NULL,'$b','0000-00-00','$c','$a','$d',NULL)");
     if($query){
         echo "<script>alert('Berhasil ditambah !!!');window.location='{$base_url}app/index.php'</script>";
     }

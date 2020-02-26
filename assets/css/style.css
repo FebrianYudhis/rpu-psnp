@@ -255,6 +255,10 @@ table {
     margin-bottom: .5rem;
 }
 
+.border-merah {
+    border: 1px solid red;
+}
+
 @media only screen and (min-device-width:360px) and (max-device-width:768px) {
     .table-responsif {
         display: block;
