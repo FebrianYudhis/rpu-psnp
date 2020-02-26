@@ -10,11 +10,11 @@ include('../../assets/templates/app/header.php');
 $ambilid = $_GET['id_peminjaman'];
 $tampil = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM peminjaman WHERE id_peminjaman='$ambilid'"));
 
-
-$inventaris=mysqli_query($koneksi,"SELECT * FROM inventaris ORDER BY nama_barang");
+$idinventaris = $tampil['id_inventaris'];
+$inventaris=mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM inventaris WHERE id_inventaris='$idinventaris'"));
 ?>
 
-<div class="kotak mt-3 mx-auto" style="width:70%;">
+<div class="kotak mt-3 mb-4 mx-auto" style="width:70%;">
     <div class="kotak-kepala center">
         <h2>Edit data peminjaman</h2>
     </div>
@@ -26,19 +26,9 @@ $inventaris=mysqli_query($koneksi,"SELECT * FROM inventaris ORDER BY nama_barang
                 <small class="form-input"><?= $tampil['id_peminjaman'];?></small>
             </div>
             <div class="form-isi">
+                <input type="hidden" name="id_inventaris" value="<?= $tampil['id_inventaris'];?>">
                 <p>Inventaris</p>
-                <select name="inventaris" class="form-input">
-                    <?php
-                        while($tampilinventaris= mysqli_fetch_array($inventaris)):
-                    ?>
-                    <option value="<?= $tampilinventaris['id_inventaris'];?>"
-                        <?php if($tampilinventaris['id_inventaris']==$tampil['id_inventaris']){echo 'selected';}?>>
-                        <?= $tampilinventaris['nama_barang'];?>
-                    </option>
-                    <?php
-                    endwhile;
-                    ?>
-                </select>
+                <small class="form-input"><?= $inventaris['nama_barang'];?></small>
             </div>
             <div class="form-isi">
                 <p>Tanggal pinjam</p>

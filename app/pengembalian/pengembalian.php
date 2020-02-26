@@ -14,7 +14,7 @@ $tampil = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM peminjaman WHE
 $tampilinventaris=mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM inventaris ORDER BY nama_barang"));
 ?>
 
-<div class="kotak mt-3 mx-auto" style="width:70%;">
+<div class="kotak mt-3 mb-4 mx-auto" style="width:70%;">
     <div class="kotak-kepala center">
         <h2>Pengembalian barang</h2>
     </div>

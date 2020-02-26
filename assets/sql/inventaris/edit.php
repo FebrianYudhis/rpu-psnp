@@ -16,10 +16,15 @@ if($_SESSION['role']!='1'){
     $e = $_POST['jenis'];
     $f = $_POST['ruang'];
     $g = $_SESSION['username'];
-    $query = mysqli_query($koneksi,"UPDATE inventaris SET nama_barang='$a',kondisi='$b',jumlah='$c',tanggal_register='$d',id_jenis='$e',id_ruang='$f',username='$g' WHERE id_inventaris='$inventaris'");
-    if($query){
-        echo "<script>alert('Berhasil diubah !!!');window.location='{$base_url}app/index.php'</script>";
+    if($c>0){
+        $query = mysqli_query($koneksi,"UPDATE inventaris SET nama_barang='$a',kondisi='$b',jumlah='$c',tanggal_register='$d',id_jenis='$e',id_ruang='$f',username='$g' WHERE id_inventaris='$inventaris'");
+        if($query){
+            echo "<script>alert('Berhasil diubah !!!');window.location='{$base_url}app/index.php'</script>";
+        }
+    }else{
+        echo "<script>alert('Masukkan jumlah diatas angka 0 !!!');window.location='{$base_url}app/inventaris/edit.php?id_inventaris={$inventaris}'</script>";
     }
+    
 }
 
 ?>

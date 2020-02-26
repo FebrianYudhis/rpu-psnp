@@ -15,10 +15,15 @@ if($_SESSION['role']!='1'){
     $e = $_POST['jenis'];
     $f = $_POST['ruang'];
     $g = $_SESSION['username'];
-    $query = mysqli_query($koneksi,"INSERT INTO inventaris VALUES(NULL,'$a','$b','$c','$d','$e','$f','$g')");
-    if($query){
-        echo "<script>alert('Berhasil ditambah !!!');window.location='{$base_url}app/index.php'</script>";
+    if($c>0){
+        $query = mysqli_query($koneksi,"INSERT INTO inventaris VALUES(NULL,'$a','$b','$c','$d','$e','$f','$g')");
+        if($query){
+            echo "<script>alert('Berhasil ditambah !!!');window.location='{$base_url}app/index.php'</script>";
+        }
+    }else{
+        echo "<script>alert('Masukkan jumlah diatas angka 0 !!!');window.location='{$base_url}app/inventaris/tambah.php'</script>";
     }
+    
 }
 
 ?>

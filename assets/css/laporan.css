@@ -23,7 +23,7 @@
 
 .laporan .kotak-kepala {
     background-color: rgb(42, 42, 243);
-    height: 5rem;
+    height: 6rem;
 }
 
 @media only print {
@@ -76,10 +76,10 @@
 
 @media only screen and (min-device-width:360px) and (max-device-width:768px) {
     .laporan .kotak {
-        width: 40%;
+        width: 43%;
     }
 
     .laporan .kotak-kepala {
-        height: 6rem;
+        height: 8.5rem;
     }
 }

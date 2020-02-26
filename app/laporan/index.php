@@ -11,13 +11,13 @@ $ambilrole = $_SESSION['role'];
 
 if(isset($_GET['cari'])){
     $cari = $_GET['cari'];
-    $querypengembalian = mysqli_query($koneksi,"SELECT * FROM peminjaman WHERE username LIKE '%$cari%'");
+    $querylaporan = mysqli_query($koneksi,"SELECT * FROM peminjaman WHERE username LIKE '%$cari%'");
     $no =1;
 }else{
     $jumlahdatahalaman = 5;
     $halamansekarang = (isset($_GET['halaman'])) ? $_GET['halaman'] : 1;
     $mulai = ($jumlahdatahalaman * $halamansekarang) - $jumlahdatahalaman;
-    $querypengembalian = mysqli_query($koneksi,"SELECT * FROM peminjaman WHERE tanggal_kembali!='0000-00-00' ORDER BY tanggal_kembali LIMIT $mulai, $jumlahdatahalaman");
+    $querylaporan = mysqli_query($koneksi,"SELECT * FROM peminjaman WHERE tanggal_kembali!='0000-00-00' ORDER BY tanggal_kembali LIMIT $mulai, $jumlahdatahalaman");
     $no = $mulai+1; 
     $result = mysqli_query($koneksi,"SELECT * FROM peminjaman WHERE tanggal_kembali!='0000-00-00'");
     $total = mysqli_num_rows($result);
@@ -101,21 +101,23 @@ $datapinjam = mysqli_num_rows(mysqli_query($koneksi,"SELECT * FROM peminjaman WH
         </thead>
         <tbody>
             <?php
-            while($tampilpengembalian = mysqli_fetch_array($querypengembalian)):
-                $idinventaris = $tampilpengembalian['id_inventaris'];
+            while($tampillaporan = mysqli_fetch_array($querylaporan)):
+                $idinventaris = $tampillaporan['id_inventaris'];
                 $ceknamabarang = mysqli_fetch_array(mysqli_query($koneksi,"SELECT * FROM inventaris WHERE id_inventaris ='$idinventaris'"));
         ?>
             <tr>
                 <td><?= $no;?></td>
                 <td><?= $ceknamabarang['nama_barang'];?></td>
-                <td><?= $tampilpengembalian['tanggal_pinjam'];?></td>
-                <td><?= $tampilpengembalian['tanggal_kembali'];?></td>
-                <td><?= $tampilpengembalian['jumlah'];?></td>
-                <td><?= $tampilpengembalian['username'];?></td>
-                <td><?= $tampilpengembalian['pengelola'];?></td>
+                <td><?= $tampillaporan['tanggal_pinjam'];?></td>
+                <td><?= $tampillaporan['tanggal_kembali'];?></td>
+                <td><?= $tampillaporan['jumlah'];?></td>
+                <td><?= $tampillaporan['username'];?></td>
+                <td><?= $tampillaporan['pengelola'];?></td>
                 <td class="aksi">
                     <button class='button button-merah'><a
-                            href='<?= $base_url;?>assets/sql/laporan/rollback.php?id_peminjaman=<?= $tampilpengembalian['id_peminjaman'];?>'>Rollback</a></button>
+                            href='<?= $base_url;?>assets/sql/laporan/rollback.php?id_peminjaman=<?= $tampillaporan['id_peminjaman'];?>'>Rollback</a></button>
+                    <button class='button button-merah'><a
+                            href='<?= $base_url;?>assets/sql/laporan/hapus.php?id_peminjaman=<?= $tampillaporan['id_peminjaman'];?>'>Hapus</a></button>
                 </td>
             </tr>
 

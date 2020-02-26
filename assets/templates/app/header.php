@@ -53,25 +53,25 @@ if(isset($operatorakses)){
             if($_SESSION['role']==1){
                     echo '<li><a href="'.$base_url.'app/akun/">List Akun</a></li>
             <li><a href="#">Jenis</a>
-                <ul>
+                <ul style="z-index:99;">
                     <li><a href="'.$base_url.'app/jenis/tambah.php">Tambah data</a></li>
                     <li><a href="'.$base_url.'app/jenis/lihat.php">Lihat data</a></li>
                 </ul>
             </li>
             <li><a href="#">Ruang</a>
-                <ul>
+                <ul style="z-index:99;">
                     <li><a href="'.$base_url.'app/ruang/tambah.php">Tambah data</a></li>
                     <li><a href="'.$base_url.'app/ruang/lihat.php">Lihat data</a></li>
                 </ul>
             </li>
             <li><a href="#">Inventaris</a>
-                <ul>
+                <ul style="z-index:99;">
                     <li><a href="'.$base_url.'app/inventaris/tambah.php">Tambah data</a></li>
                     <li><a href="'.$base_url.'app/inventaris/lihat.php">Lihat data</a></li>
                 </ul>
             </li>
             <li><a href="#">Peminjaman</a>
-                <ul>
+                <ul style="z-index:99;">
                     <li><a href="'.$base_url.'app/peminjaman/tambah.php">Tambah data</a></li>
                     <li><a href="'.$base_url.'app/peminjaman/lihat.php">Lihat data</a></li>
                 </ul>
