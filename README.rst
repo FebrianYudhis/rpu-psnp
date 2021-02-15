@@ -2,10 +2,10 @@
 Tentang Aplikasi
 ###################
 
-`Aplikasi Pengelolaan Sarana Dan Prasarana`
-Dibuat dengan bahasa pemrograman php native.
-Dibuat perorangan oleh Febrian Yudhistira Hanggoro
-Aplikasi ini dibuat untuk pemenuhan nilai ujian kompetensi keahlian.
+| Aplikasi Pengelolaan Sarana Dan Prasarana`
+| Dibuat dengan bahasa pemrograman php native.
+| Dibuat perorangan oleh Febrian Yudhistira Hanggoro
+| Aplikasi ini dibuat untuk pemenuhan nilai ujian kompetensi keahlian.
 
 
 ******
