@@ -11,8 +11,8 @@ Tentang Aplikasi
 Jenis Repository
 *****************
 
-| Repo ini memiliki prefix "rp" yang berarti "repository pribadi".
-| Artinya repository ini di khususkan penggunaan pribadi pemilik repository.
+| Repo ini memiliki prefix "rpu" yang berarti "repository pribadi usang".
+| Artinya repository ini di khususkan penggunaan pribadi pemilik repository namun perkembangannya sudah ditinggalkan.
 | Berada di github publik sebagai bentuk arsip.
 | Jika ingin melakukan modifikasi silahkan sesuaikan dengan environment anda.
 
@@ -28,7 +28,7 @@ Fitur
 Instalasi
 *******
 
-| 1. Jalankan di terminal "git clone https://github.com/FebrianYudhis/rp-aplikasi-PSNP.git"
+| 1. Jalankan di terminal "git clone https://github.com/FebrianYudhis/rpu-aplikasi-PSNP.git"
 | 2. Buat database dan import sql file "aplikasi.sql"
 | 3. Edit file "assets/sql/koneksi.php" sesuai environment anda
 | 4. Buat akun baru secara manual di database atau masukkan (username : admin ,password : root )
